@@ -1,4 +1,4 @@
-# Chapter 1: Setting Up Your Go Environment
+# Chapter 2: Primitive Types and Declarations
 
 ## 2.0 Built-in Types
 
