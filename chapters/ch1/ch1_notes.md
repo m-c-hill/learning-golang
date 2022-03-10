@@ -17,7 +17,7 @@ $ chmod +x hello_world
 $ ./hello_world
 ```
 
-### 1.1 Installing Third-Party Go Tools
+#### 1.1 Installing Third-Party Go Tools
 
 Third-party packages are installed directly from source code repositories (rather than a centrally hosted service):
 `$ go install <repo_url>`
@@ -27,7 +27,7 @@ For example,
 
 This downloads the hey package and installs it in the `$GOPATH/bin` dir.
 
-### 1.2 Formatting Code
+#### 1.2 Formatting Code
 
 Go is strict with how it is formatted to both avoid "format wars" and to allow for greater efficiency when writing code.
 
@@ -38,7 +38,7 @@ A further too called `goimports` takes this further by tidying imports:
 `$ goimports -l -w`
 
 
-## 1.3 Linting and Vetting
+#### 1.3 Linting and Vetting
 
 The `golint` tool ensures that all go files adhere (syntactically) to the strict style of Go.
 
@@ -52,7 +52,7 @@ The `vet` tool checks for further errors in syntactially correct code. It examin
 
 `$ go vet ./`
 
-## 1.4 Makefiles
+#### 1.4 Makefiles
 Makefiles specify build steps. The make utility requires a file, Makefile (or makefile), which defines a set of tasks to be executed. You may have used make to compile a program from source code.
 
 To run:
