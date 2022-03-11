@@ -19,7 +19,12 @@ A literal of a value is a text representation of the value in code:
 - Rune literals: single characters surrounded by single quotes. Can include unicode characters, oct nums, hex nums, unicode nums.
 - Raw string litetal: delimited with backquotes (\`) and can contain any character (except a backquote). Can be multiline.
 
-All literals have a default type.
+All literals have a default type:
+- The default type of a string literal is `string`.
+- The default type of a boolean literal is `bool`.
+- The default type of an integer literal is `int`.
+- The default type of a rune literal is `rune` (a.k.a., `int32`).
+- The default type of a floating-point literal is `float64`.
 
 #### 2.3 Booleans
 The `bool` type represents boolean variables, which are `true` or `false`.
