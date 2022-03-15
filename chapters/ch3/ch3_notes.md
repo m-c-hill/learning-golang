@@ -96,6 +96,43 @@ fmt.Println(y, num) // [1 2 3 4] 4
 Go runtime provides services such as memory allocation, garbage collection, concurrency support and networking. Unlike other language, the Go runtime is compiled into every Go binary (avoid use of vm), makes distribution of Go programs easier.
 
 
+## 3.3 Strings, Runes and Bytes
+
+### 3.3.1 Strings
+
+Go uses a sequence of bytes to represent a string (often assumed to be UTF-8 encoded).
+
+Strings can also be indexed, much like slices:
+```
+var s string = "Hello there"
+var b byte = s[6]  // b set to 't'
+var s2 string = s[:5] // "Hello"
+```
+
+Warning: some UTF-8 characters can be represented by multiple bytes (such as emojis) which can lead to problems when slicing.
+
+### 3.3.2 String conversions
+
+A single run or byte can be converted to a string:
+
+```
+var a rune = 'x'
+var s string = string(a)
+var b byte = 'y'
+var s2 string = string(b)
+```
+
+A string can be converted back and forth to a slice of bytes or a slice of runes:
+
+```
+var s string = "Hello"
+var bs []byte = []bytes(s)
+var rs []rune = []rune(s)
+```
+
+## 3.4 Maps
+
+
 
 ## References
 - https://go101.org/article/basic-types-and-value-literals.html
