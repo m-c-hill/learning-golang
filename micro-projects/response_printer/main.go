@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-type logWriter struct{}
+// type logWriter struct{}
 
 func main() {
 	// func Get(url string) (resp *Response, err error)
@@ -22,13 +22,13 @@ func main() {
 
 	// fmt.Println(string(bs))
 
-	lw := logWriter{}
+	//lw := logWriter{}
 
 	io.Copy(os.Stdout, resp.Body)
 }
 
-func (logWriter) Write(bs []byte) (int, error) {
-	fmt.Println(string(bs))
-	fmt.Println(len(bs), " bytes have been written to the terminal.")
-	return len(bs), nil
-}
+// func (logWriter) Write(bs []byte) (int, error) {
+// 	fmt.Println(string(bs))
+// 	fmt.Println(len(bs), " bytes have been written to the terminal.")
+// 	return len(bs), nil
+// }

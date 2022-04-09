@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"time"
 )
 
 func main() {
@@ -14,17 +15,21 @@ func main() {
 		go checkUrl(url, c)
 	}
 
-	for i := 0; i < len(urls); i++ {
-		fmt.Println(<-c)
+	for u := range c {
+		// Wait for channel to return a value and assign it to u. Then pass into checkUrl.
+		go func(url string) { // Function literal
+			time.Sleep(time.Second * 2)
+			checkUrl(url, c)
+		}(u)
 	}
 }
 
 func checkUrl(url string, c chan string) {
 	_, err := http.Get(url)
 	if err != nil {
-		msg := "Error accessing" + url
-		c <- msg
+		fmt.Println("Error accessing" + url)
+		c <- url
 	}
-	msg := "Successfully made call to " + url
-	c <- msg
+	fmt.Println("Successfully made call to " + url)
+	c <- url
 }
